@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="CCSwiftDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y98-8g-Y9v">
+                    <rect key="frame" x="20" y="248.5" width="335" height="50"/>
+                    <color key="backgroundColor" red="0.92650240380000004" green="0.46601771120000002" blue="0.0026307843280000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="iaU-VA-IJm"/>
+                    </constraints>
+                    <state key="normal" title="Push"/>
+                    <connections>
+                        <action selector="actionPush:" destination="-1" eventType="touchUpInside" id="Ajn-cC-8v6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fT-kG-nsf">
+                    <rect key="frame" x="20" y="348.5" width="335" height="50"/>
+                    <color key="backgroundColor" red="0.92650240380000004" green="0.46601771120000002" blue="0.0026307843280000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="PMr-9G-aV7"/>
+                    </constraints>
+                    <state key="normal" title="Present"/>
+                    <connections>
+                        <action selector="actionPresent:" destination="-1" eventType="touchUpInside" id="WMV-mx-F2F"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id0-Um-aGw">
+                    <rect key="frame" x="20" y="448.5" width="335" height="50"/>
+                    <color key="backgroundColor" red="0.92650240380000004" green="0.46601771120000002" blue="0.0026307843280000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="J7u-I7-h0A"/>
+                    </constraints>
+                    <state key="normal" title="Dismiss"/>
+                    <connections>
+                        <action selector="actionDismiss:" destination="-1" eventType="touchUpInside" id="OeH-YY-Vhn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7fT-kG-nsf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="5fS-sq-p16"/>
+                <constraint firstAttribute="trailing" secondItem="id0-Um-aGw" secondAttribute="trailing" constant="20" id="72r-Es-Kmq"/>
+                <constraint firstItem="id0-Um-aGw" firstAttribute="top" secondItem="7fT-kG-nsf" secondAttribute="bottom" constant="50" id="7Qz-0a-PnD"/>
+                <constraint firstItem="7fT-kG-nsf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="40" id="Deh-BK-h1o"/>
+                <constraint firstAttribute="trailing" secondItem="y98-8g-Y9v" secondAttribute="trailing" constant="20" id="P3V-Zg-eFD"/>
+                <constraint firstAttribute="trailing" secondItem="7fT-kG-nsf" secondAttribute="trailing" constant="20" id="YnK-DM-w4C"/>
+                <constraint firstItem="y98-8g-Y9v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="b1I-RZ-ACq"/>
+                <constraint firstItem="7fT-kG-nsf" firstAttribute="top" secondItem="y98-8g-Y9v" secondAttribute="bottom" constant="50" id="izf-RX-zLd"/>
+                <constraint firstItem="id0-Um-aGw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="kmi-Cm-ccT"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

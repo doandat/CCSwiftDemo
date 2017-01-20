@@ -1,0 +1,6 @@
+framework module Pods_CCSwiftDemo {
+  umbrella header "Pods-CCSwiftDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

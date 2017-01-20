@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E2833791AB2A8541C7C4A285B46F2B5A1C3EDDAD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3732E3290EA8D052DBD9E687D8587989503CE582" : 9223372036854775807,
+    "E2833791AB2A8541C7C4A285B46F2B5A1C3EDDAD" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9CDD0599-82D8-4705-9E27-17596FD23108",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3732E3290EA8D052DBD9E687D8587989503CE582" : "",
+    "E2833791AB2A8541C7C4A285B46F2B5A1C3EDDAD" : "SwiftDemo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CCSwiftDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CCSwiftDemo\/CCSwiftDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/datdv\/baseprojectjson.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3732E3290EA8D052DBD9E687D8587989503CE582"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/datdv\/ccswiftdemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E2833791AB2A8541C7C4A285B46F2B5A1C3EDDAD"
+    }
+  ]
+}

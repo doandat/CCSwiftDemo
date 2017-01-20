@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ItemCollectionCell" customModule="CCSwiftDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="134" height="172"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="134" height="172"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KV7-Nv-wPW">
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="127"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alN-WT-JoT">
+                        <rect key="frame" x="0.0" y="127" width="134" height="45"/>
+                        <color key="backgroundColor" red="0.075038842859999996" green="0.5843682885" blue="0.6381847262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="3Ql-ht-y6f"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="alN-WT-JoT" firstAttribute="top" secondItem="KV7-Nv-wPW" secondAttribute="bottom" id="6KC-B4-SGl"/>
+                <constraint firstItem="alN-WT-JoT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Juo-QL-iGA"/>
+                <constraint firstAttribute="trailing" secondItem="KV7-Nv-wPW" secondAttribute="trailing" id="KJf-LA-A2P"/>
+                <constraint firstItem="KV7-Nv-wPW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XXf-vt-i8M"/>
+                <constraint firstAttribute="trailing" secondItem="alN-WT-JoT" secondAttribute="trailing" id="YEJ-Rd-oZf"/>
+                <constraint firstItem="KV7-Nv-wPW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fiK-k2-DgP"/>
+                <constraint firstAttribute="bottom" secondItem="alN-WT-JoT" secondAttribute="bottom" id="hu8-kX-L0X"/>
+            </constraints>
+            <size key="customSize" width="134" height="172"/>
+            <connections>
+                <outlet property="imvDes" destination="KV7-Nv-wPW" id="qe3-fa-tT7"/>
+            </connections>
+            <point key="canvasLocation" x="30" y="121"/>
+        </collectionViewCell>
+    </objects>
+</document>
