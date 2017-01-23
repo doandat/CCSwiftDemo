@@ -34,14 +34,76 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     // 1: Set animation speed
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.4
+        return defaultTransitionDuration
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         // 2: Get view controllers involved
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        let containerView = transitionContext.containerView
+        
+        // 3: Set the destination view controllers frame
+        toVC?.view.frame = (fromVC?.view.frame)!
+        toVC?.view.alpha = 0.0
+        containerView.addSubview((toVC?.view)!)
+
+        
+        // 4: Create transition image view
+        let imageView = UIImageView(image: image)
+        
+        if let pIsDismiss = isDismiss
+        {
+            imageView.contentMode = pIsDismiss ? UIViewContentMode.scaleAspectFill : UIViewContentMode.scaleAspectFit
+        }
+        else
+        {
+            imageView.contentMode = .scaleAspectFit
+        }
+        
+        imageView.frame = (fromDelegate == nil) ? CGRect(x: 0, y: 0, width: 0, height: 0) : fromDelegate!.imageWindowFrame()
+        imageView.clipsToBounds = true
+        containerView.addSubview(imageView)
+        
+        fromDelegate!.tranisitionSetup()
+        toDelegate!.tranisitionSetup()
         
         
+        // 7: Bring the image view to the front and get the final frame
+        containerView.bringSubview(toFront: imageView)
+        let toFrame = (self.toDelegate == nil) ? CGRect(x: 0, y: 0, width: 0, height: 0) : self.toDelegate!.imageWindowFrame()
+        
+        // 8: Animate change
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            imageView.frame = toFrame
+            toVC?.view.alpha = 1.0
+        }, completion:{ [weak self] (finished) in
+            
+            self?.toDelegate!.tranisitionCleanup()
+            self?.fromDelegate!.tranisitionCleanup()
+            
+            // 9: Remove transition views
+            imageView.removeFromSuperview()
+
+            //remove to avoid retain cycle
+            if toVC!.responds(to: Selector(("removeProperty")))
+            {
+                toVC!.perform(Selector(("removeProperty")))
+            }
+
+            
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+
+        })
+    }
+    
+    
+    //this func not run in iphone 7, 7plus
+    /*
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        // 2: Get view controllers involved
         let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
         let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
         let containerView = transitionContext.containerView
@@ -76,10 +138,9 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
         // 6: Create to screen snapshot
         let toSnapshot = toVC?.view.snapshotView(afterScreenUpdates: true)
         toSnapshot?.frame = (fromVC?.view.frame)!
-//        toSnapshot?.frame.origin.y -= 64.0;
-
+        
         containerView.addSubview(toSnapshot!)
-        toSnapshot?.alpha = 0
+        toSnapshot?.alpha = 1
         
         // 7: Bring the image view to the front and get the final frame
         containerView.bringSubview(toFront: imageView)
@@ -89,7 +150,6 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             toSnapshot?.alpha = 1
             imageView.frame = toFrame
-            
         }, completion:{ [weak self] (finished) in
             
             self?.toDelegate!.tranisitionCleanup()
@@ -104,15 +164,18 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
             {
                 toVC!.perform(Selector(("removeProperty")))
             }
-
+            
             
             // 10: Complete transition
             if !transitionContext.transitionWasCancelled {
                 containerView.addSubview((toVC?.view)!)
             }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            
         })
     }
+
+    */
     
     deinit {
         print("deinit AnimationController")

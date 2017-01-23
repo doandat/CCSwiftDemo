@@ -8,5 +8,5 @@
 
 import Foundation
 
-let defaultTransitionDuration: Duration = 1.75
+let defaultTransitionDuration: Duration = 0.5
 let defaultPresentationDuration: Duration = 1.4

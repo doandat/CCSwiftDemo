@@ -19,11 +19,7 @@ class ShowImagePushAnimationManager: NSObject, UINavigationControllerDelegate
     
     //MARK: Navigation delegate
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
-    {
-        
-//        toVC.respondsToSelector(Selector("work"))
-        
-        
+    {        
         interactiveAnimator?.connectGestureRecognizer(to: toVC)
 
         if operation == .pop
